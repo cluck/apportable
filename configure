@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo configure: success
+exit 0
+

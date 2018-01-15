@@ -1,0 +1,14 @@
+language: python
+
+env:
+  global:
+  - PYTHONUNBUFFERED=1
+
+stages:
+  - name: build_ext
+  - name: test
+
+python:
+  - '2.7'
+  - '3.6'
+
