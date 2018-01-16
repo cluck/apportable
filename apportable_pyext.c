@@ -396,13 +396,13 @@ static struct PyModuleDef moduledef = {
 #define INITERROR return NULL
 
 PyMODINIT_FUNC
-PyInit_apportable(void)
+PyInit__apportable(void)
 
 #else /* PY_MAJOR_VERSION >= 3 */
 #define INITERROR return
 
 void
-initapportable(void)
+init_apportable(void)
 #endif
 {
 	struct module_state *st;
@@ -411,7 +411,7 @@ initapportable(void)
 #if PY_MAJOR_VERSION >= 3
   PyObject *module = PyModule_Create(&moduledef);
 #else
-  PyObject *module = Py_InitModule("apportable", apportable_methods);
+  PyObject *module = Py_InitModule("_apportable", apportable_methods);
 #endif
 
   if (module == NULL)
@@ -419,7 +419,7 @@ initapportable(void)
   st = GETSTATE(module);
   apportable_init(&(st->apportable), 1);
 
-  st->error = PyErr_NewException("apportable.Error", NULL, NULL);
+  st->error = PyErr_NewException("apportable.ApportableError", NULL, NULL);
   if (st->error == NULL) {
     Py_DECREF(module);
     INITERROR;
