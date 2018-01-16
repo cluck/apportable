@@ -1,14 +1,26 @@
 language: python
 
-env:
-  global:
-  - PYTHONUNBUFFERED=1
+install:
 
-stages:
-  - name: build_ext
-  - name: test
+script:
+  python setup.py test
 
 python:
   - '2.7'
   - '3.6'
+
+os:
+  - linux
+  - osx
+
+matrix:
+  allow_failures:
+    - os: linux
+      python: "2.7"
+    - os: linux
+      python: "3.6"
+
+env:
+  global:
+  - PYTHONUNBUFFERED=1
 

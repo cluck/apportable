@@ -2,6 +2,8 @@
 
 **This project is not finished yet; use with care.**
 
+[![Linux and macOS Build Status](https://travis-ci.org/cluck/apportable.svg?branch=master)](https://travis-ci.org/cluck/apportable) [![Windows Build status](https://ci.appveyor.com/api/projects/status/ho6hkyg0bheau0vv?svg=true)](https://ci.appveyor.com/project/cluck/apportable)
+
 C library to help making applications portable.
 
 ## Motivation

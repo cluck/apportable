@@ -1,7 +1,7 @@
 
 import sys
 
-from distutils.core import setup, Extension
+from setuptools import setup, Extension
 
 if sys.platform != 'win32':
 	ext_libs = ['iconv']
@@ -21,5 +21,6 @@ setup(
 		name = 'libapportable-test',
 		version = '1.0',
 		description = 'Apportable tests',
+		test_suite = "tests",
 		ext_modules = [_apportable],
 	)

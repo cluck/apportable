@@ -28,7 +28,7 @@ build/lib/.build_stamp: setup.py apportable.c apportable_pyext.c
 build_ext: build/lib/.build_stamp
 
 test: build_ext
-	PYTHONPATH=build/lib $(PYTHON) test_apportable.py
+	PYTHONPATH=build/lib $(PYTHON) test_apportable.py --verbose
 
 clean:
 	rm -f apportable build/lib/* build/lib/.build_stamp apportable_demo apportable_demo.exe
